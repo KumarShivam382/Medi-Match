@@ -85,9 +85,7 @@ app.get("/gallery", (req, res) => {
 });
 // Predict disease route---------------------------
 app.get("/predict", (req, res) => {
-  // res.send("Working On It!!!");
-  res.status(500).render("error", { err });
-  // res.render("predict.ejs");
+  res.render("predict.ejs");
 });
 //------------------error handling------------------
 app.all("*", (req, res, next) => {
