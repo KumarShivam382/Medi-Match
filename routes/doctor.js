@@ -31,6 +31,7 @@ const isAdmin = async (req, res, next) => {
   }
   next();
 };
+
 // filtered doctor search--------------------------
 
 router.post(
@@ -50,7 +51,6 @@ router.post(
     }
     console.log(new_doctors);
     res.render("doctors/filtered", { new_doctors });
-    
   })
 );
 
@@ -61,10 +61,12 @@ router.get(
     res.render("doctors/index", { doctors });
   })
 );
+
 //--------------------new -------------------
 router.get("/new", isAdmin, (req, res) => {
   res.render("doctors/new");
 });
+
 router.post(
   "/",
   isAdmin,
@@ -76,6 +78,7 @@ router.post(
     res.redirect(`/doctors`);
   })
 );
+
 // -------------show----------------------------
 router.get(
   "/:id",

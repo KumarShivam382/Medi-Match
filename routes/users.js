@@ -6,6 +6,7 @@ const { authenticate } = require("passport");
 const passport = require("passport");
 
 router.get("/register", (req, res) => {
+  res.status(statusCode).render("error", { err });
   res.render("users/register");
 });
 
@@ -29,6 +30,7 @@ router.post(
 );
 
 router.get("/login", (req, res) => {
+  res.status(statusCode).render("error", { err });
   res.render("users/login");
 });
 
